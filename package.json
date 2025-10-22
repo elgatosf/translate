@@ -1,0 +1,39 @@
+{
+    "name": "@elgato/translate",
+    "version": "0.0.0",
+    "description": "Translate resource files using DeepL.",
+    "type": "module",
+    "bin": {
+        "translate": "bin/main.js"
+    },
+    "scripts": {
+        "build": "tsc",
+        "dev": "tsc --watch",
+        "lint": "eslint --max-warnings 0"
+    },
+    "prettier": "@elgato/prettier-config",
+    "author": {
+        "name": "Elgato",
+        "url": "https://www.elgato.com"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/elgatosf/streamdeck-ui.git"
+    },
+    "homepage": "https://github.com/elgatosf/translate#readme",
+    "dependencies": {
+        "@clack/prompts": "^0.11.0",
+        "commander": "^14.0.1",
+        "deepl-node": "^1.19.1",
+        "lodash": "^4.17.21",
+        "zod": "^4.1.12"
+    },
+    "devDependencies": {
+        "@elgato/eslint-config": "^0.3.1",
+        "@elgato/prettier-config": "^0.2.6",
+        "@types/lodash": "^4.17.20",
+        "@types/node": "^24.9.1",
+        "typescript": "^5.9.3"
+    }
+}

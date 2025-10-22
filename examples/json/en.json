@@ -1,0 +1,56 @@
+{
+    "Name": "Window Mover",
+    "Category": "Window Mover",
+    "Description": "Move your windows.",
+    "com.elgato.window-mover.custom": {
+        "Name": "Custom",
+        "Tooltip": "Place and size a window how you like"
+    },
+    "com.elgato.window-mover.layout": {
+        "Name": "Layout",
+        "Tooltip": "Snap a window into a preset position"
+    },
+    "com.elgato.window-mover.maximize": {
+        "Name": "Maximize",
+        "Tooltip": "Expand a window to fill your display"
+    },
+    "Localization": {
+        "selection": "Selection",
+        "window": "Window",
+        "app": "App",
+        "foreground": "Foreground",
+        "custom": "Custom",
+        "display": "Display",
+        "app-name": "App Name",
+        "select-an-app": "Select an app",
+        "loading-apps": "Loading applications...",
+        "window-title": "Window Title",
+        "window-title-match": "Window Title - *",
+        "select-display": "Select a display",
+        "loading-displays": "Loading displays...",
+        "x": "X",
+        "y": "Y",
+        "width": "Width",
+        "height": "Height",
+        "left-half": "Left Half",
+        "right-half": "Right Half",
+        "top-left": "Top Left",
+        "top-right": "Top Right",
+        "bottom-left": "Bottom Left",
+        "bottom-right": "Bottom Right",
+        "left-third": "Left Third",
+        "center-third": "Center Third",
+        "right-third": "Right Third",
+        "left-quarter": "Left Quarter",
+        "center-half": "Center Half",
+        "right-quarter": "Right Quarter",
+        "top-half": "Top Half",
+        "bottom-half": "Bottom Half",
+        "top-third": "Top Third",
+        "middle-third": "Middle Third",
+        "bottom-third": "Bottom Third",
+        "top-quarter": "Top Quarter",
+        "middle-half": "Middle Half",
+        "bottom-quarter": "Bottom Quarter"
+    }
+}
