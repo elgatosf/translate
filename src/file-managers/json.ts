@@ -5,7 +5,7 @@ import type { TranslationFileManager } from "../file-manager.js";
 import { write } from "../io.js";
 
 /**
- * JSON localization manager.
+ * JSON file manager capable of reading/writing translations.
  */
 class JsonLocalizations implements TranslationFileManager {
 	/**
@@ -79,11 +79,11 @@ class JsonLocalizations implements TranslationFileManager {
 }
 
 /**
- * Creates a new JSON localization manager for translating resources with DeepL.
+ * Creates a JSON file manager for reading/writing translations.
  * @param path Path to the JSON file that contains the English translations.
- * @returns The localization manager.
+ * @returns The file manager.
  */
-export async function createJsonLocalizationManager(path: string) {
+export async function createJsonFileManager(path: string) {
 	const json = await readFile(path, { encoding: "utf-8" });
 	return new JsonLocalizations(JSON.parse(json));
 }

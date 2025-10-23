@@ -1,6 +1,7 @@
 import { extname } from "node:path";
 
-import { createJsonLocalizationManager } from "./file-managers/json.js";
+import { createJsonFileManager } from "./file-managers/json.js";
+import { createReswFileManager } from "./file-managers/resw.js";
 
 /**
  * Gets the file manager capable of handling translations for the specified file.
@@ -10,7 +11,11 @@ import { createJsonLocalizationManager } from "./file-managers/json.js";
 export async function getFileManager(path: string): Promise<TranslationFileManager> {
 	const ext = extname(path).toLowerCase();
 	if (ext === ".json") {
-		return await createJsonLocalizationManager(path);
+		return await createJsonFileManager(path);
+	}
+
+	if (ext === ".resw") {
+		return await createReswFileManager(path);
 	}
 
 	throw new Error(`Unsupported file extension: ${ext}`);

@@ -26,12 +26,14 @@
         "@clack/prompts": "^0.11.0",
         "commander": "^14.0.1",
         "deepl-node": "^1.19.1",
+        "jsdom": "^27.0.1",
         "lodash": "^4.17.21",
         "zod": "^4.1.12"
     },
     "devDependencies": {
         "@elgato/eslint-config": "^0.3.1",
         "@elgato/prettier-config": "^0.2.6",
+        "@types/jsdom": "^27.0.0",
         "@types/lodash": "^4.17.20",
         "@types/node": "^24.9.1",
         "typescript": "^5.9.3"
