@@ -7,8 +7,8 @@
         "translate": "bin/main.js"
     },
     "scripts": {
-        "build": "tsc",
-        "dev": "tsc --watch",
+        "build": "rolldown -c",
+        "dev": "rolldown --watch -c",
         "lint": "eslint --max-warnings 0"
     },
     "prettier": "@elgato/prettier-config",
@@ -36,6 +36,7 @@
         "@types/jsdom": "^27.0.0",
         "@types/lodash": "^4.17.20",
         "@types/node": "^24.9.1",
+        "rolldown": "1.0.0-beta.44",
         "typescript": "^5.9.3"
     }
 }
