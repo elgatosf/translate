@@ -12,7 +12,7 @@ Command-line tool for translating resource files with [DeepL](https://www.deepl.
 ## Pre-requisites
 
 - DeepL auth key
-- English text in JSON format
+- English text in JSON or RESW format
 
 ## Usage
 
