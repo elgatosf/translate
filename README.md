@@ -46,6 +46,8 @@ translate -k <DEEPL_AUTH_KEY>
 
 ## Configuration
 
+Main configuration that defines the source texts, and target languages.
+
 | Name        | Type                                                              | Description                    | Required |
 | ----------- | ----------------------------------------------------------------- | ------------------------------ | -------- |
 | `source`    | `string`                                                          | Path to the English text.      | ✅       |
@@ -53,6 +55,8 @@ translate -k <DEEPL_AUTH_KEY>
 | `formality` | `"less"`, `"prefer_less"`, `"default"`, `"prefer_more"`, `"more"` | Formality of the translations. |          |
 
 ### TargetLanguage
+
+Target languages the source texts will be translated to.
 
 | Name        | Type                                                              | Description                                                                                                                      | Required |
 | ----------- | ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------- |
