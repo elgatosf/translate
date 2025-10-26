@@ -1,12 +1,12 @@
 import { JSDOM } from "jsdom";
 
-import type { TranslationFileManager } from "../file-manager.js";
 import { write } from "../io.js";
+import type { TranslationFileHandler } from "./file-handler.js";
 
 /**
- * RESW file manager capable of reading/writing translations.
+ * File handler capable of reading/writing translation text from/to RESW files.
  */
-class ResxFileManager implements TranslationFileManager {
+class ResxFileHandler implements TranslationFileHandler {
 	/**
 	 * @inheritdoc
 	 */
@@ -23,7 +23,7 @@ class ResxFileManager implements TranslationFileManager {
 	private _translations: string[];
 
 	/**
-	 * Initializes a new instance of the {@link ResxFileManager} class.
+	 * Initializes a new instance of the {@link ResxFileHandler} class.
 	 * @param source The English translations.
 	 */
 	constructor(source: JSDOM) {
@@ -200,11 +200,11 @@ class ResxFileManager implements TranslationFileManager {
 }
 
 /**
- * Creates a RESW file manager for reading/writing translations.
- * @param path Path to the JSON file that contains the English translations.
- * @returns The file manager.
+ * Creates a RESW translation file handler.
+ * @param path Path to the RESW file that contains the English translations.
+ * @returns The file handler.
  */
-export async function createReswFileManager(path: string) {
+export async function createReswFileHandler(path: string): Promise<TranslationFileHandler> {
 	const dom = await JSDOM.fromFile(path);
-	return new ResxFileManager(dom);
+	return new ResxFileHandler(dom);
 }

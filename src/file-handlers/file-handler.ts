@@ -1,30 +1,30 @@
 import { extname } from "node:path";
 
-import { createJsonFileManager } from "./file-managers/json.js";
-import { createReswFileManager } from "./file-managers/resw.js";
+import { createJsonFileHandler } from "./json.js";
+import { createReswFileHandler } from "./resw.js";
 
 /**
- * Gets the file manager capable of handling translations for the specified file.
+ * Gets the file handler for the specified file.
  * @param path Path to the English translations.
- * @returns The file manager.
+ * @returns The file handler.
  */
-export async function getFileManager(path: string): Promise<TranslationFileManager> {
+export async function getFileHandler(path: string): Promise<TranslationFileHandler> {
 	const ext = extname(path).toLowerCase();
 	if (ext === ".json") {
-		return await createJsonFileManager(path);
+		return await createJsonFileHandler(path);
 	}
 
 	if (ext === ".resw") {
-		return await createReswFileManager(path);
+		return await createReswFileHandler(path);
 	}
 
-	throw new Error(`Unsupported file extension: ${ext}`);
+	throw new Error(`Unsupported file extension ${ext}, please specify a .json or .resw file`);
 }
 
 /**
- * File manager responsible for reading and writing translation files.
+ * File handler capable of reading/writing translation text from/to files.
  */
-export interface TranslationFileManager {
+export interface TranslationFileHandler {
 	/**
 	 * File extension the translation parser supports.
 	 */

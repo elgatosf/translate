@@ -140,6 +140,7 @@ vite.config.ts.timestamp-*
 
 # Miscellaneous
 bin
-examples/json/*.json
+examples/
 !examples/json/en.json
+!examples/resw/en.resw
 translations.config.json

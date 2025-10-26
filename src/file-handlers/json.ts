@@ -1,13 +1,13 @@
 import _ from "lodash";
 import { readFile } from "node:fs/promises";
 
-import type { TranslationFileManager } from "../file-manager.js";
 import { write } from "../io.js";
+import type { TranslationFileHandler } from "./file-handler.js";
 
 /**
- * JSON file manager capable of reading/writing translations.
+ * File handler capable of reading/writing translation text from/to JSON files.
  */
-class JsonLocalizations implements TranslationFileManager {
+class JsonFileHandler implements TranslationFileHandler {
 	/**
 	 * @inheritdoc
 	 */
@@ -19,7 +19,7 @@ class JsonLocalizations implements TranslationFileManager {
 	private _translations = new Map<string, JsonTranslation>();
 
 	/**
-	 * Initializes a new instance of the {@link JsonLocalizations} class.
+	 * Initializes a new instance of the {@link JsonFileHandler} class.
 	 * @param source The English translations.s
 	 */
 	constructor(source: object) {
@@ -79,13 +79,13 @@ class JsonLocalizations implements TranslationFileManager {
 }
 
 /**
- * Creates a JSON file manager for reading/writing translations.
+ * Creates a JSON translation file handler.
  * @param path Path to the JSON file that contains the English translations.
- * @returns The file manager.
+ * @returns The file handler.
  */
-export async function createJsonFileManager(path: string) {
+export async function createJsonFileHandler(path: string): Promise<TranslationFileHandler> {
 	const json = await readFile(path, { encoding: "utf-8" });
-	return new JsonLocalizations(JSON.parse(json));
+	return new JsonFileHandler(JSON.parse(json));
 }
 
 /**

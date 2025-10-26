@@ -3,7 +3,7 @@ import { join } from "node:path";
 
 import type { Configuration } from "./config/file.js";
 import type { TargetLanguage } from "./config/target-language.js";
-import type { TranslationFileManager } from "./file-manager.js";
+import type { TranslationFileHandler } from "./file-handlers/file-handler.js";
 
 /**
  * Translates English text, and saves the output to a localized file.
@@ -12,17 +12,23 @@ import type { TranslationFileManager } from "./file-manager.js";
  * @param param0.config The configuration.
  * @param param0.language Target language.
  * @param param0.outDir Output directory.
- * @param param0.fileManager Translation file manager.
+ * @param param0.fileHandler Translation file handler.
  * @returns Output path where the translations were saved.
  */
-export async function translate({ client, config, fileManager, language, outDir }: TranslateOptions): Promise<string> {
-	const result = await client.translateText(fileManager.translations(), "en", language.code, {
+export async function translateWithDeepL({
+	client,
+	config,
+	fileHandler,
+	language,
+	outDir,
+}: TranslateOptions): Promise<string> {
+	const result = await client.translateText(fileHandler.translations(), "en", language.code, {
 		glossary: language.glossary,
 		formality: language.formality ?? config.formality,
 	});
 
-	const path = language.file ?? join(outDir, `${language.code}${fileManager.ext}`);
-	await fileManager.save(
+	const path = language.file ?? join(outDir, `${language.code}${fileHandler.ext}`);
+	await fileHandler.save(
 		path,
 		result.map((x) => x.text),
 	);
@@ -47,9 +53,9 @@ interface TranslateOptions {
 	outDir: string;
 
 	/**
-	 * File manager responsible for providing English text, and saving translations.
+	 * File handler capable of reading/writing translation text from/to files.
 	 */
-	fileManager: TranslationFileManager;
+	fileHandler: TranslationFileHandler;
 
 	/**
 	 * Target language.
