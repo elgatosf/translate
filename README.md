@@ -60,6 +60,16 @@ translate -k <DEEPL_AUTH_KEY>
 | `formality` | `"less"`, `"prefer_less"`, `"default"`, `"prefer_more"`, `"more"` | Formality of the translations.                                                                                                   |          |
 | `file`      | `string`                                                          | Output file.                                                                                                                     |          |
 | `glossary`  | `string`                                                          | DeepL glossary identifier.                                                                                                       |          |
+| `overrides` | `Override[]`                                                      | Manual overrides.                                                                                                                |          |
+
+### Override
+
+Allows for manual translations.
+
+| Name   | Type     | Description                                                 | Required |
+| ------ | -------- | ----------------------------------------------------------- | -------- |
+| `text` | `string` | Text that should not be translated with the remote service. | ✅       |
+| `out`  | `string` | Output text; when unspecified, the original text is output. |          |
 
 ## CLI Options
 
