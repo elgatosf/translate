@@ -2,7 +2,7 @@ import * as p from "@clack/prompts";
 import { existsSync } from "node:fs";
 import { extname } from "node:path";
 
-import { type Configuration, DEFAULT_CONFIG_PATH } from "../config/file.js";
+import { type Configuration, DEFAULT_CONFIG_PATH } from "../config/config.js";
 import type { TargetLanguage } from "../config/target-language.js";
 import { write } from "../io.js";
 

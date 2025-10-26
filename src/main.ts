@@ -3,7 +3,7 @@ import { program } from "commander";
 
 import { init } from "./commands/init.js";
 import { translate } from "./commands/translate.js";
-import { DEFAULT_CONFIG_PATH } from "./config/file.js";
+import { DEFAULT_CONFIG_PATH } from "./config/config.js";
 
 program.command("init").description("Initialize a configuration file").action(init);
 

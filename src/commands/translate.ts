@@ -3,7 +3,7 @@ import * as p from "@clack/prompts";
 import { DeepLClient } from "deepl-node";
 import { dirname } from "node:path";
 
-import { getConfig } from "../config/file.js";
+import { getConfig } from "../config/config.js";
 import { translateWithDeepL } from "../deepl.js";
 import { getFileHandler } from "../file-handlers/file-handler.js";
 
