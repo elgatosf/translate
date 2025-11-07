@@ -19,7 +19,7 @@ Command-line tool for translating resource files with [DeepL](https://www.deepl.
 1. Install `@elgato/translate`
 
 ```
-npm install @elgato/translate
+npm install @elgato/translate -g
 ```
 
 2. Create a `translations.config.json` file ([learn more](#configuration))
