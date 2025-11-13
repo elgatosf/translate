@@ -22,7 +22,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/elgatosf/streamdeck-ui.git"
+        "url": "git+https://github.com/elgatosf/translate.git"
     },
     "homepage": "https://github.com/elgatosf/translate#readme",
     "dependencies": {
