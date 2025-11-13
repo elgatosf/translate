@@ -6,6 +6,9 @@
     "bin": {
         "translate": "bin/main.js"
     },
+    "files": [
+        "bin/"
+    ],
     "scripts": {
         "build": "rolldown -c",
         "dev": "rolldown --watch -c",
