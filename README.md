@@ -22,23 +22,12 @@ Command-line tool for translating resource files with [DeepL](https://www.deepl.
 npm install @elgato/translate -g
 ```
 
-2. Create a `translations.config.json` file ([learn more](#configuration))
-
-```json
-{
-    "source": "locales/en.json",
-    "targets": [
-        {
-            "code": "de"
-        },
-        {
-            "code": "fr"
-        }
-    ]
-}
+2. Run the initialization wizard
+```
+translate init
 ```
 
-3. Translate your English text.
+3. Translate resources
 
 ```
 translate -k <DEEPL_AUTH_KEY>
