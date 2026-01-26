@@ -1,4 +1,4 @@
-import { JSDOM } from "jsdom";
+import type { JSDOM } from "jsdom";
 
 import { write } from "../io.js";
 import type { TranslationFileHandler } from "./file-handler.js";
@@ -205,6 +205,8 @@ class ResxFileHandler implements TranslationFileHandler {
  * @returns The file handler.
  */
 export async function createReswFileHandler(path: string): Promise<TranslationFileHandler> {
+	const { JSDOM } = await import("jsdom");
+
 	const dom = await JSDOM.fromFile(path);
 	return new ResxFileHandler(dom);
 }
