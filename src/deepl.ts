@@ -1,4 +1,5 @@
 import type deepl from "deepl-node";
+import type { TargetLanguageCode } from "deepl-node";
 import { join } from "node:path";
 
 import type { Configuration } from "./config/config.js";
@@ -69,7 +70,7 @@ async function getTranslatedTexts(texts: string[], opts: TranslateOptions): Prom
 	}
 
 	const { client, config, language } = opts;
-	const res = await client.translateText(texts, "en", language.code, {
+	const res = await client.translateText(texts, "en", language.code as TargetLanguageCode, {
 		glossary: language.glossary,
 		formality: language.formality ?? config.formality,
 	});

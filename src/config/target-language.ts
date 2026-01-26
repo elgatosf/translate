@@ -1,4 +1,3 @@
-import type { TargetLanguageCode } from "deepl-node";
 import { z } from "zod/mini";
 
 import { Formality } from "./formality.js";
@@ -28,45 +27,7 @@ const Override = z.pipe(
  * Configuration for a target language.
  */
 export const TargetLanguage = z.object({
-	code: z.enum([
-		"ar",
-		"bg",
-		"cs",
-		"da",
-		"de",
-		"el",
-		"en-GB",
-		"en-US",
-		"es",
-		"et",
-		"fi",
-		"fr",
-		"he",
-		"hu",
-		"id",
-		"it",
-		"ja",
-		"ko",
-		"lt",
-		"lv",
-		"nb",
-		"nl",
-		"pl",
-		"pt-BR",
-		"pt-PT",
-		"ro",
-		"ru",
-		"sk",
-		"sl",
-		"sv",
-		"th",
-		"tr",
-		"uk",
-		"vi",
-		"zh",
-		"zh-HANS",
-		"zh-HANT",
-	] as const satisfies readonly TargetLanguageCode[]),
+	code: z.string(),
 	file: z.optional(z.string()),
 	formality: z.optional(Formality),
 	glossary: z.optional(z.string()),
