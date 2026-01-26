@@ -17,7 +17,7 @@
 ### ♻️ Refactor
 
 - DeepL request errors are now correctly logged.
-- Startup time dramatically improved for non-RESW translations.
+- Start-up time dramatically improved for non-RESW translations.
 - Configuration validation no longer validates language codes.
 
 ## 0.1.0
