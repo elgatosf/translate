@@ -1,6 +1,6 @@
 {
     "name": "@elgato/translate",
-    "version": "0.1.3",
+    "version": "0.2.0",
     "description": "Translate resource files using DeepL.",
     "type": "module",
     "bin": {
