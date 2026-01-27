@@ -47,7 +47,7 @@ export async function translate(opts: Options): Promise<void> {
 			spinner.stop(`Saved ${output}`);
 		} catch (e) {
 			spinner.stop(`Failed to translate ${language.code}`);
-			p.cancel(`${e}`);
+			p.cancel(e instanceof Error ? e.message : String(e));
 
 			process.exit(1);
 		}
