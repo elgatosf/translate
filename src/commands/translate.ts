@@ -34,16 +34,23 @@ export async function translate(opts: Options): Promise<void> {
 
 	// Translate languages.
 	for (const language of config.targets) {
-		spinner.start(`Translating ${language.code}`);
-		const output = await translateWithDeepL({
-			client: deeplClient,
-			config,
-			fileHandler,
-			language,
-			outDir: dirname(config.source),
-		});
+		try {
+			spinner.start(`Translating ${language.code}`);
+			const output = await translateWithDeepL({
+				client: deeplClient,
+				config,
+				fileHandler,
+				language,
+				outDir: dirname(config.source),
+			});
 
-		spinner.stop(`Saved ${output}`);
+			spinner.stop(`Saved ${output}`);
+		} catch (e) {
+			spinner.stop(`Failed to translate ${language.code}`);
+			p.cancel(e instanceof Error ? e.message : String(e));
+
+			process.exit(1);
+		}
 	}
 
 	p.outro("Done");

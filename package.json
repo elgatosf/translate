@@ -28,7 +28,7 @@
     "dependencies": {
         "@clack/prompts": "^0.11.0",
         "commander": "^14.0.1",
-        "deepl-node": "^1.19.1",
+        "deepl-node": "^1.24.0",
         "jsdom": "^27.0.1",
         "lodash": "^4.17.21",
         "zod": "^4.1.12"
